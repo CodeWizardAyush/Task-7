@@ -1,1 +1,33 @@
+import sqlite3
+
+# Connect to (or create) the SQLite database
+conn = sqlite3.connect("sales_data.db")
+cursor = conn.cursor()
+
+# Create the sales table
+cursor.execute("""
+CREATE TABLE IF NOT EXISTS sales (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    product TEXT NOT NULL,
+    quantity INTEGER NOT NULL,
+    price REAL NOT NULL
+)
+""")
+
+# Insert sample data
+sample_data = [
+    ("Product A", 10, 15.00),
+    ("Product B", 5, 25.00),
+    ("Product A", 7, 15.00),
+    ("Product C", 3, 30.00),
+    ("Product B", 8, 25.00)
+]
+
+cursor.executemany("INSERT INTO sales (product, quantity, price) VALUES (?, ?, ?)", sample_data)
+conn.commit()
+
+print("Database 'sales_data.db' with 'sales' table created and populated successfully.")
+
+# Close the connection
+conn.close()
 
