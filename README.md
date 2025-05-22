@@ -12,7 +12,7 @@
 
 ---
 ## Screenshot
-[image]!(https://github.com/CodeWizardAyush/Task-7/blob/main/Screenshot/Screenshot%20(1).png)
+![image](https://github.com/CodeWizardAyush/Task-7/blob/main/Screenshot/Screenshot%20(1).png)
 
 
 ### Outcome
